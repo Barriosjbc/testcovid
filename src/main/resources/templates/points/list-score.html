@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<head>
+<title>Puntaje final</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <link th:href="@{/css/style.css}" rel="stylesheet" />
+<script type="text/javascript" th:src="@{/js/include-html.js}"></script>
+</head>
+<body>
+
+	<div data-include="header"></div>
+	<div class="container">
+
+		<div sec:authorize="hasRole('ROLE_ADMIN')">
+			<h5 th:text="${'Fecha de busqueda: '+ fecha}"></h5>
+			<hr>
+			<a class="btn btn-primary" th:href="@{/test/buscar}">Nueva
+				busqueda</a>
+		</div>
+
+		<h2 th:text="${student.first_name}"></h2>
+		<form method="post" th:action="@{/questions/save}" autocomplete="off"
+			class="mt-5" enctype="multipart/form-data">
+
+			<h3 th:text="${'Puntaje: ' + puntaje}"></h3>
+			<h3 class="text-danger"
+				th:text="${puntaje>=5?'Con sintomas sospechosos':''}"></h3>
+			<h3 class="text-success" th:text="${puntaje<5?'Puedes entrar':''}"></h3>
+			<table>
+
+				<thead class="thead-dark">
+
+					<tr>
+						<th>Question</th>
+						<th>Puntaje</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr th:each="tempStudent,iterador : ${pregunta}">
+
+
+						<td th:text="${tempStudent.question}" />
+						<td
+							th:text="${tempStudent.positivo==0? tempStudent.negativo:tempStudent.positivo}" />
+
+					</tr>
+				</tbody>
+
+			</table>
+		</form>
+		<div sec:authorize="hasRole('ROLE_ADMIN')">
+
+			<form action="#" th:action="@{/logout}" method="POST">
+
+				<input type="submit" value="Logout"
+					class="btn btn-outline-primary mt-2" />
+
+			</form>
+
+
+		</div>
+		<div th:if="${not #authorization.expression('hasRole(''ADMIN'')')}">
+			<a class="btn btn-primary" th:href="@{/questions/home}">Finalizar</a>
+		</div>
+	</div>
+
+</body>
+</html>

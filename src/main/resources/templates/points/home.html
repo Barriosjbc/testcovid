@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<head>
+<meta charset="UTF-8" />
+<title>Spring Boot Thymeleaf Application - Bootstrap Radio
+	Buttons</title>
+
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+<script type="text/javascript" th:src="@{/js/include-html.js}"></script>
+</head>
+
+<body>
+
+
+	<div data-include="header"></div>
+
+
+	<main class="container">
+		<div>
+			<h3>
+				<img src="/image/pulmones.jpg" alt="Retrato de Lope de Vega"
+					class="izquierda">Objetivo
+			</h3>
+			<p>Identificar a pacientes con signos y síntomas de enfermedad
+				respiratoria con sospecha de COVID-19, con la finalidad de disminuir
+				el riesgo de contagio y tiempo de espera en la atención.</p>
+
+		</div>
+
+		<div>
+
+
+			<hr>
+			<form th:action="@{/questions/list}" autocomplete="off" class="form">
+
+				<label for="id"> Id:</label> <input required type="number"
+					name="studentId" /> <br>
+				<button id="init" type="submit">Iniciar Formulario</button>
+				<a id="init" th:href="@{/showMyLoginPage}">Administrador</a>
+			</form>
+
+		</div>
+
+	</main>
+
+
+
+</body>
+
+</html>

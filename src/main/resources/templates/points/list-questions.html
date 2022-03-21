@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="es" 	xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      
+      layout:decorate="master">
+      <link th:href="@{/css/style.css}" rel="stylesheet" />
+<head>
+	<title>Students directory</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+   <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" >
+	 --><script type="text/javascript" th:src="@{/js/include-html.js}"></script>
+</head>
+<body>
+<div data-include="header"></div>
+<div class="container">
+	
+	<form method="post" th:action="@{/questions/save}"  autocomplete="off" class="mt-5" enctype="multipart/form-data" >
+
+	<input type="hidden" th:field="*{test.question_id}"/>
+	<input type="hidden" th:field="*{test.student_id}" />
+	<div  class="form-group">
+	<h2 th:text="${students.first_name}"></h2>
+       </div>
+<table>
+
+	<thead>
+	
+		<tr>
+			<th>Number</th>
+			
+			<th>Question</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+	  	<tr  th:each="tempStudent : ${questions}" >
+	  	 <td th:text="${tempStudent.id}" />
+	  	 
+		 <td th:text="${tempStudent.question}"/>
+		 
+		  <td>
+		 	  
+        <label>
+          <input type="radio" required="required" autocomplete="off" name="op1" th:value="${tempStudent.positivo}" th:field="*{test.puntaje}"> Si
+        </label>
+        <label>
+          <input type="radio"  required="required" autocomplete="off" name="op1" th:value="${tempStudent.negativo}" th:field="*{test.puntaje}"> No
+        </label>
+      
+
+		 	
+		 </td>
+		</tr>
+	</tbody>
+
+</table>
+ <button id="next" type="submit" >Siguiente</button>
+<div class='alert alert-warning' th:if="${#fields.hasErrors('test.puntaje')}" th:errors='*{test.puntaje}'></div>
+
+
+  </form>
+</div>
+</body>
+</html>

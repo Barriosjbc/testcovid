@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	
+	<title>Inicio de seisión</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+	<!-- Reference Bootstrap files -->
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	
+	<!-- <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 --><script type="text/javascript" th:src="@{/js/include-html.js}"></script>
+</head>
+
+<body>
+	<div  data-include="header"></div>
+	
+	<div >
+		
+		<div >
+			
+			<div >
+
+				<div >
+					<h2>Inicio de seisión</h2>
+				</div>
+
+				<div>
+
+					<!-- Login Form -->
+					<form th:action="@{/authenticateTheUser}" 
+						  method="POST" class="contact-form">
+
+					    <!-- Place for messages: error, alert etc ... -->
+					    <div >
+					        <div >
+					            <div>
+								
+									<!-- Check for login error -->
+								
+									<div th:if="${param.error}" class="contact-form-error">
+										
+										<div >
+											*Usuario y contraseña incorrectos.
+										</div>
+		
+									</div>
+										
+									<!-- Check for logout -->
+
+									<div th:if="${param.logout}">
+										            
+										<div class="contact-form-ok ">
+											Has cerrado sesión.
+										</div>
+								    
+									</div>
+									
+					            </div>
+					        </div>
+					    </div>
+
+						<!-- User name -->
+						<div  class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
+							
+							<input type="text" name="username" placeholder="usuario" >
+						</div>
+
+						<!-- Password -->
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
+							
+							<input type="password" name="password" placeholder="contraseña" class="form-control" >
+						</div>
+
+						<!-- Login/Submit Button -->
+						<div >						
+							<div >
+								<button class="btn btn-primary" type="submit">Login</button>
+							</div>
+						</div>
+						<div >
+						<div >	
+						<a class="btn btn-primary" th:href="@{/questions/home}">Inicio</a>
+						</div>
+						</div>
+					</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+</html>

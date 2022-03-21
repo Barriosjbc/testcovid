@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<head>
+<meta charset="UTF-8" />
+<title>Spring Boot Thymeleaf Application - Bootstrap Radio
+	Buttons</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script type="text/javascript" th:src="@{/js/include-html.js}"></script>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<div data-include="header"></div>
+	<div class="container">
+		<h3 th:text="'No existen registros del usuario ' + ${nofound} + ' con la fecha ' + ${fecha}"></h3>
+		<hr>
+		
+			<!-- -*********************************************** -->
+<!--    <a class="btn btn-primary" type="submit"  >Enviar</a> -->
+<a class="btn btn-primary" th:href="@{/test/buscar}">Regresar</a>
+		
+
+	</div>
+
+</body>
+
+</html>

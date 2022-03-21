@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<head>
+<meta charset="UTF-8" />
+<title>Spring Boot Thymeleaf Application - Bootstrap Radio
+	Buttons</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<script type="text/javascript" th:src="@{/js/include-html.js}"></script>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<div data-include="header"></div>
+	<div class="container">
+
+		<form method="post" th:action="@{/questions/save}" autocomplete="off"
+			class="mt-5">
+			<input type="hidden" th:field="*{test.question_id}" /> <input
+				type="hidden" name="id" placeholder="numero de id"
+				th:value="${test.student_id}" th:field="*{test.student_id}">
+
+			<h2 th:text="${student.first_name}"></h2>
+			<br>
+			<table>
+				<thead>
+
+					<tr>
+						<th>Number</th>
+
+						<th>Question</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td th:text="${pregunta.id}" />
+
+						<td th:text="${pregunta.question}" />
+
+						<td><label> <input type="radio" required="required"
+								name="opcion1" th:value="${pregunta.positivo}"
+								th:field="*{test.puntaje}"> Si
+						</label> <label> <input type="radio" required="required"
+								name="opcion1" th:value="${pregunta.negativo}"
+								th:field="*{test.puntaje}"> No
+						</label></td>
+					</tr>
+				</tbody>
+
+			</table>
+
+
+
+
+
+			<!-- -*********************************************** -->
+
+
+			<button id="next" type="submit">Siguiente</button>
+			<!--    <button class="btn btn-primary" type="submit" th:disabled="${pregunta.id} <= 2">Siguiente</button> -->
+			<div class='alert alert-warning'
+				th:if="${#fields.hasErrors('test.puntaje')}"
+				th:errors='*{test.puntaje}'></div>
+
+		</form>
+
+	</div>
+	<!--***************************************************************************************************-->
+
+
+
+
+
+
+
+</body>
+
+</html>

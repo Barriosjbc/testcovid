@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<head>
+<meta charset="UTF-8" />
+<title>Spring Boot Thymeleaf Application - Bootstrap Radio
+	Buttons</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ <link th:href="@{/css/style.css}" rel="stylesheet" />
+	<script type="text/javascript" th:src="@{/js/include-html.js}"></script>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+<div data-include="header"></div>
+	<div class="container">
+		
+		<form method="post" th:action="@{/questions/saveFinalScore}" autocomplete="off"
+			class="mt-5">
+			<input type="hidden" th:field="*{test.question_id}" />  <input type="hidden" name="id"
+				placeholder="numero de id" th:value="${test.student_id}"
+				th:field="*{test.student_id}">
+				<h2 th:text="${student.first_name}"></h2>
+      <br>
+			<table>
+				<thead>
+
+					<tr>
+						<th>Number</th>
+
+						<th>Question</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td th:text="${pregunta.id}" />
+
+						<td th:text="${pregunta.question}" />
+
+						<td>
+						
+						<select th:field="*{test.puntaje}">
+								<option th:value="1" >Ayer</option>
+								<option th:value="1" >hace 3 dias</option>
+								<option th:value="1" >hace una semana</option>
+								<option th:value="0" >no lo he estado</option>
+						</select>
+						</td>
+					</tr>
+				</tbody>
+
+			</table>
+
+
+
+
+
+			<!-- -*********************************************** -->
+
+
+			<button id="next" type="submit">Terminar</button>
+			<!--    <button class="btn btn-primary" type="submit" th:disabled="${pregunta.id} <= 2">Siguiente</button> -->
+
+		</form>
+
+	</div>
+	<!--***************************************************************************************************-->
+
+
+
+
+
+
+
+</body>
+
+</html>
