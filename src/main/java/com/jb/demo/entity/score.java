@@ -1,4 +1,4 @@
-package com.jb.demo.copy.entity;
+package com.jb.demo.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

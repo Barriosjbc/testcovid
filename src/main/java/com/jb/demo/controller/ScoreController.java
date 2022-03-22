@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.jb.demo.copy.entity.Student;
-import com.jb.demo.copy.entity.questions;
-import com.jb.demo.copy.entity.score;
-import com.jb.demo.copy.service.QuestionService;
-import com.jb.demo.copy.service.ScoreService;
-import com.jb.demo.copy.service.StudentService;
 //import com.luv2code.springboot.myselfdemo.entity.Student;
 //import com.luv2code.springboot.myselfdemo.entity.Student;
 //import com.miproyecto.inventariodemo.entity.Venta;
+import com.jb.demo.entity.Student;
+import com.jb.demo.entity.questions;
+import com.jb.demo.entity.score;
+import com.jb.demo.service.QuestionService;
+import com.jb.demo.service.ScoreService;
+import com.jb.demo.service.StudentService;
 
 //import com.luv2code.springboot.myselfdemo.service.StudentService;
 

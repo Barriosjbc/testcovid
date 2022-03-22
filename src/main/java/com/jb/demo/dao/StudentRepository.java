@@ -1,8 +1,8 @@
-package com.jb.demo.copy.dao;
+package com.jb.demo.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.jb.demo.copy.entity.Student;
+import com.jb.demo.entity.Student;
 
 public interface StudentRepository extends JpaRepository<Student, Integer> {
 	

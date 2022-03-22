@@ -1,4 +1,4 @@
-package com.jb.demo.copy.dao;
+package com.jb.demo.dao;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.jb.demo.copy.entity.score;
+import com.jb.demo.entity.score;
 
 public interface ScoreRepository extends JpaRepository<score, Integer> {
 	

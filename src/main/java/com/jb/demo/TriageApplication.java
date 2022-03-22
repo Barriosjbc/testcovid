@@ -3,8 +3,7 @@ package com.jb.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
-import com.jb.demo.copy.dao.ScoreRepository;
+import com.jb.demo.dao.ScoreRepository;
 @SpringBootApplication
 public class TriageApplication {
 

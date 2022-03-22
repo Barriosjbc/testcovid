@@ -1,4 +1,4 @@
-package com.jb.demo.copy.entity;
+package com.jb.demo.entity;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

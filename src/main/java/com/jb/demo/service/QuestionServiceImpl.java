@@ -1,4 +1,4 @@
-package com.jb.demo.copy.service;
+package com.jb.demo.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jb.demo.copy.dao.QuestionaryRepository;
-import com.jb.demo.copy.dao.ScoreRepository;
-import com.jb.demo.copy.entity.questions;
-import com.jb.demo.copy.entity.score;
+import com.jb.demo.dao.QuestionaryRepository;
+import com.jb.demo.dao.ScoreRepository;
+import com.jb.demo.entity.questions;
+import com.jb.demo.entity.score;
 
 @Service
 

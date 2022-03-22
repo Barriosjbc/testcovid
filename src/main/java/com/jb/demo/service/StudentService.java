@@ -1,8 +1,8 @@
-package com.jb.demo.copy.service;
+package com.jb.demo.service;
 
 import java.util.List;
 
-import com.jb.demo.copy.entity.Student;
+import com.jb.demo.entity.Student;
 
 public interface StudentService {
 	public List<Student> findAll();
